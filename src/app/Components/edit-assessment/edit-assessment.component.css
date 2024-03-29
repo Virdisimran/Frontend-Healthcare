@@ -1,0 +1,73 @@
+#button{
+    background: black;
+    color: white;
+    font-weight: bold;
+    font-family: system-ui;
+    font-size: 21px;
+    border-radius: 16px;
+    margin-left: 1088px;
+    margin-top: 35px;
+    border-color:transparent ;
+}
+
+.mt-3 {
+    margin-top: 7rem !important;
+}
+
+
+.card{
+    margin-bottom: 50px;
+    margin-top: 67px;
+    width: 921px;
+    margin-left: 120px;
+}
+
+.select{
+    width: 461px;
+    margin-left: 17px;
+    margin-bottom: 36px;
+}
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #212529;
+    --bs-btn-border-color: #212529;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #212529;
+    --bs-btn-active-border-color: #212529;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #212529;
+    --bs-btn-disabled-border-color: #212529;
+}
+.card-body {
+    display: flex;
+    align-items: center;
+  }
+ .line{
+    width: 892px;
+    margin-left: 11px;
+    margin-top: -32px;
+  }
+  .radio-group {
+    display: flex;
+    gap: 20px; /* Adjust the gap size as needed */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* Adjust the right margin to create space between radio buttons */
+}
+
+#save{
+    margin-left: 1257px;
+    margin-top: 31px;
+    width: 76px;
+    font-weight: bold;
+    font-size: large;
+}
+
+  
+  

@@ -1,0 +1,7 @@
+<div class="container">
+    <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="First Name"><br>
+    <input type="text" name="lastName" [(ngModel)]="lastName"  placeholder="Last Name"><br> 
+     <label for="dob" style="color:#00000082">Date of Birth:</label>
+     <input type="date" name="dob" id="dob" [(ngModel)]="dob" placeholder="Date of Birth"><br>
+      <button type="submit" id="submit" (click)="addPatient()">Submit</button>
+  </div>

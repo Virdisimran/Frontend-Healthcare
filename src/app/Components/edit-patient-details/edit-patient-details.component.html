@@ -1,0 +1,10 @@
+<div class="container" *ngIf="data">
+    <label for="firstNae">First Name</label>
+    <input type="text" name="data.firstName" [(ngModel)]="data.firstName" placeholder="First Name"><br>
+    <label for="lastName">Last Name</label>
+    <input type="text" name="data.lastName" [(ngModel)]="data.lastName" placeholder="Last Name"><br> 
+    <label for="dob" >Date of Birth:</label>
+    <input type="date" name="data.dob" [(ngModel)]="data.dob" placeholder="Date of Birth"><br>
+    <button type="submit" id="submit" (click)="editPatient()">Submit</button>
+  </div>
+  

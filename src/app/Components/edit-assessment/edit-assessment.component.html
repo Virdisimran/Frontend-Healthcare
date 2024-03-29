@@ -1,0 +1,62 @@
+<!-- Button to trigger modal -->
+<button type="button" class="btn btn-primary" id="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Question</button>
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <form [formGroup]="myForm" (ngSubmit)="addQuestions()">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Question</h5>
+                    <button type="button" class="btn-close" aria-label="Close"  data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" formControlName="question" style="width: 464px;">
+                </div>
+                <p style="margin-top: 14px;
+                   margin-left: 18px;">Response Type</p>
+    
+              <select class="select" formControlName="responseType">
+              <option value="text">TEXT</option>
+              <option value="textArea">TEXTAREA</option>
+              <option value="radio">RADIO</option>
+              <option value="date">DatePicker</option>
+              </select>
+    
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+  
+  <!-- Assuming you're in an Angular component -->
+  <div>
+    <div class="card" *ngFor="let item of data">
+      <form>
+        <div class="card-body" style="margin-bottom: 29px; display: flex; align-items: center;">
+          <h6 class="card-title" style="flex: 1; margin-left: 12px;">{{ item.question }}</h6>
+          <ng-container [ngSwitch]="item.responseType">
+            <input *ngSwitchCase="'text'" type="text" name="response" [(ngModel)]="responses[item.id]">
+            <textarea *ngSwitchCase="'textArea'" cols="20" rows="3" name="response"   [(ngModel)]="responses[item.id]"></textarea>
+            <span class="radio-group" *ngSwitchCase="'radio'" >
+              <label for="{{ item.id }}_yes">Yes</label>
+              <input type="radio" id="{{ item.id }}_yes" name="response"  [(ngModel)]="responses[item.id]" value="yes">
+              <label for="{{ item.id }}_no">No</label>
+              <input type="radio" id="{{ item.id }}_no" name="response"  [(ngModel)]="responses[item.id]" value="no">
+            </span>
+            <input *ngSwitchCase="'date'" type="date" name="response" [(ngModel)]="responses[item.id]">
+          </ng-container>
+        </div>
+      </form>
+    </div>
+    <button type="button" class="btn btn-primary" id="button" style="margin-left: 584px;" (click)="done()">Save</button>
+  </div>
+  
+  
+  
+

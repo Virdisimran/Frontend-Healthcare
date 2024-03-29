@@ -1,0 +1,108 @@
+<!-- <h1 style="margin-left: 34px;
+margin-top: 24px;">Assessments</h1>
+<button class="btn btn primary" ></button>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" id="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    New Assessment
+  </button>
+  
+  <!-- Modal -->
+  <!-- <form [formGroup]="myForm" (ngSubmit)="addAssessment()">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Assessment</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" formControlName="name" style="width: 464px;">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+              <button type="button" class="btn btn-primary"  (click)="addAssessment()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+
+  <div style="margin-top: 65px;">
+      <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data" style="margin-bottom: 20px">
+            <td >
+                <span style="margin-left: 93px;">
+                    <a routerLink='/edit' (click)="editAssessment(item.id)">{{item.name}}</a>
+                </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+         -->
+    
+<div *ngIf="patient">
+  <h5>{{patient.firstName}} {{patient.lastName}}</h5>
+  <h5>{{patient.dob}}</h5>
+
+</div>
+     <!-- Button to trigger modal -->
+<button type="button" class="btn btn-primary" id="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Select Assessment</button>
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <form [formGroup]="myForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">List of Assessments</h5>
+                <button type="button" class="btn-close" aria-label="Close"  data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body"  >
+              <p style="margin-top: 14px;margin-left: 3px;"></p>
+  
+              <select class="select" formControlName="responseType" style="width: 463px;" >
+                <option *ngFor="let assessment of data" [value]="assessment.name">{{ assessment.name }}</option>
+              </select>
+              
+    
+              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" (click)="selectedValue()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+  
+  <!-- Assuming you're in an Angular component -->
+  <!-- <div>
+    <div class="card" *ngFor="let item of data">
+      <form>
+        <div class="card-body" style="margin-bottom: 29px; display: flex; align-items: center;">
+          <h6 class="card-title" style="flex: 1; margin-left: 12px;">{{ item.question }}</h6>
+          <ng-container [ngSwitch]="item.responseType">
+            <input *ngSwitchCase="'text'" type="text" name="response">
+            <textarea *ngSwitchCase="'textArea'" cols="20" rows="3" name="response"  ></textarea>
+            <span class="radio-group" *ngSwitchCase="'radio'" >
+              <label for="{{ item.id }}_yes">Yes</label>
+              <input type="radio" id="{{ item.id }}_yes" name="response"  value="yes">
+              <label for="{{ item.id }}_no">No</label>
+              <input type="radio" id="{{ item.id }}_no" name="response"   value="no">
+            </span>
+            <input *ngSwitchCase="'date'" type="date" name="response" >
+          </ng-container>
+        </div>
+      </form>
+    </div>
+    <button type="button" class="btn btn-primary" id="button" style="margin-left: 584px;" (click)="done()">Save</button>
+  </div>
+  
+   -->
+  
+

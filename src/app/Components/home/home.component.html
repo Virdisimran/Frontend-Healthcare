@@ -1,0 +1,29 @@
+<button type="button" class="btn btn primary" style="margin-left: 1111px;margin-top: 54px;" (click)="addPatient()">Add Patient</button>
+<div class="container mt-3" >        
+  <table class="table table-striped" style="margin-top: 82px;">
+    <thead>
+      <tr style="text-align: center;">
+        <th>Firstname</th>
+        <th>LastName</th>
+        <th>Date of Birth</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center;">
+        <tr *ngFor="let item of list" >
+            <td>{{item.firstName}}</td>
+          <td >{{item.lastName}}</td>
+            <td>{{item.dob}}</td> 
+            <td>
+              <button type="btuton" class="btn btn primary" (click)= "viewDetails(item.id)">View</button>
+              <button type="button" class="btn btn primary" (click)= "editDetails(item.id)">Edit Details</button> 
+              <button type="button" class="btn btn primary" (click)="addAssessment(item.id)" >Add Assessment</button> 
+              </td>
+          </tbody>
+        </table>
+      </div> 
+
+
+
+  
+  
